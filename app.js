@@ -5,6 +5,9 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
+let mongoose = require('mongoose');
+let config = require('./config/globals');
+
 let index = require('./controllers/index');
 
 let app = express();
@@ -20,6 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+mongoose.connect(config.db);
 
 app.use('/', index);
 

@@ -1,0 +1,4 @@
+host: ds259175.mlab.com:59175
+db: comp2106-assignment2
+un: 200239087
+pw: Istinal13
