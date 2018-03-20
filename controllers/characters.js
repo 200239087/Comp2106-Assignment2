@@ -39,6 +39,19 @@ router.post('/add', (req, res, next) => {
     });
 });
 
+router.get('/delete/:_id', (req, res, next) => {
+    let _id = req.params._id;
+
+    Character.remove({ _id: _id }, (err) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.redirect('/characters');
+        }
+    });
+});
+
 router.get('/edit/:_id', (req, res, next) => {
     let _id = req.params._id;
 
