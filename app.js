@@ -9,6 +9,7 @@ let mongoose = require('mongoose');
 let config = require('./config/globals');
 
 let index = require('./controllers/index');
+let characters = require('./controllers/characters');
 
 let app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 mongoose.connect(config.db);
 
 app.use('/', index);
+app.use('/characters', characters);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

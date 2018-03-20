@@ -2,4 +2,5 @@
 
 <p>This application uses Node JS, Express Genorator, and MEAN Stack.</p>
 
-<p>This application will display a list of some of my own favourite video games, and users will be able to log in to add their own to the list.</p>
+<p>I am currently writing an indepth fantasy book series with hundreds of characters, so many that I've started losing track of them.</p> 
+<p>Hopfully with this application I can create a well structured and easy to read character profile database for my convenience</p>
