@@ -37,9 +37,8 @@ main section:last-child a:hover {
 div.grid {
     margin: 2%;
     display: grid;
-    grid-template-columns: 1/5 1/5 1/5 1/5 1/5;
+    /* grid-template-columns: 1/5 1/5 1/5 1/5 1/5; */
     grid-template-rows: auto;
-    /* grid-column-gap: 10px; */
     grid-template-areas: 
     "name race summary summary action"
     "gender element summary summary action"
@@ -62,4 +61,11 @@ section.item-e {
 }
 section.item-f {
     grid-area: action;
+}
+
+form#edit > fieldset > select#race {
+    padding-left: 0;
+}
+fieldset.form-check {
+    margin-right: 10px;
 }
