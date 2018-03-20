@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/add', (req, res, next) => {
-    res.render('chracters/add', {
+    res.render('characters/add', {
        title: 'Add a New Character' 
     });
 });

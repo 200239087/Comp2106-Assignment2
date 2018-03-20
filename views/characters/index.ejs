@@ -1,3 +1,36 @@
 <% include ../shared/header.ejs %>
 
+<h1><%= title %></h1>
+
+<a href="/characters/add">Add a New Character</a>
+
+<% for(let i = 0; i < characters.length; i++){ %>
+<div class="grid">
+    <section class="item item-a">
+        <h2>Name</h2>
+        <p><%= characters[i].name %></p>
+    </section>
+    <section class="item item-b">
+        <h2>Race</h2>
+        <p><%= characters[i].race %></p>
+    </section>
+    <section class="item item-c">
+        <h2>Gender</h2>
+        <p><%= characters[i].gender %></p>
+    </section>
+    <section class="item item-d">
+        <h2>Magic Element</h2>
+        <p><%= characters[i].element %></p>
+    </section>
+    <section class="item item-e">
+        <h2>Summary</h2>
+        <p><%= characters[i].summary %></p>
+    </section>
+    <section class="item item-f">
+        <a href="/characters/edit/<%= characters[i]._id %>">Edit</a>
+        <a href="/characters/delete/<%= characters[i]._id %>" onclick="return confirm('Are you sure you want to delete this character?')">Delete</a>
+    </section>
+</div>
+<% } %>
+
 <% include ../shared/footer.ejs %>

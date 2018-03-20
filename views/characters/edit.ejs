@@ -1,3 +1,29 @@
 <% include ../shared/header.ejs %>
 
+<h1><%= title %></h1>
+
+<form method="POST">
+    <fieldset class="form-group">
+        <label for="name" class="control-label col-md-2">Name:</label>
+        <input type="text" id="name" name="name" required value="<%= character.name %>">
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="race" class="control-label col-md-2">Race:</label>
+        <input type="text" id="race" name="race" required value="<%= character.race %>">
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="gender" class="control-label col-md-2">Gender:</label>
+        <input type="text" id="gender" name="gender" required value="<%= character.gender %>">
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="element" class="control-label col-md-2">Magic Element:</label>
+        <input type="text" id="element" name="element" required value="<%= character.element %>">
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="summary" class="control-label col-md-2">Summary:</label>
+        <textarea type="text" cols="100" rows="4" id="summary" name="summary"><%= character.summary %></textarea>
+    </fieldset>
+    <button class="offset-2 btn btn-primary">Submit</button>
+</form>
+
 <% include ../shared/footer.ejs %>

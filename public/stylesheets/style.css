@@ -1,3 +1,65 @@
 main {
     padding: 1%;
 }
+
+main section {
+    outline: 1px solid black;
+    background: rgb(212, 212, 212);
+}
+section h2 {
+    font-size: 20px;
+    background: grey;
+    margin: 0;
+    padding: 5px;
+}
+section p {
+    font-size: 18px;
+    background: rgb(212, 212, 212);
+    margin: 0;
+    padding: 5px;
+}
+main section:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: flex-end; */
+    /* align-content: center; */
+}
+main section:last-child a {
+    color: black;
+    align-self: center;
+    padding: 5px;
+}
+main section:last-child a:hover {
+    color: grey;
+}
+
+div.grid {
+    margin: 2%;
+    display: grid;
+    grid-template-columns: 1/5 1/5 1/5 1/5 1/5;
+    grid-template-rows: auto;
+    /* grid-column-gap: 10px; */
+    grid-template-areas: 
+    "name race summary summary action"
+    "gender element summary summary action"
+}
+
+section.item-a {
+    grid-area: name;
+}
+section.item-b {
+    grid-area: race;
+}
+section.item-c {
+    grid-area: gender;
+}
+section.item-d {
+    grid-area: element;
+}
+section.item-e {
+    grid-area: summary;
+}
+section.item-f {
+    grid-area: action;
+}
