@@ -1,4 +1,11 @@
 <% include ../shared/header.ejs %>
+<% include ../../controllers/races.js %>
+
+<script>
+    let option = document.getElementById('race').options;
+    let select = document.getElementById('race');
+</script>
+
 
 <h1><%= title %></h1>
 
@@ -9,17 +16,28 @@
     </fieldset>
     <fieldset class="form-group">
             <label for="race" class="control-label col-md-2">Race:</label>
+            <% for(let i = 0; i < race.length; i++) { %>
+                <% if(character.race == document.getElementById('race').options[i].value) { %>
+                    <% document.getElementById('race').selectedIndex = i %>
+                    
             <select class="col-md-2" id="race" name="race" required>
-                <option>Angel</option>
-                <option>Fallen</option>
-                <option>Guardian</option>
-                <option>Human</option>
-                <option>Istinal</option>
-                <option>Kindred</option>
-                <option>Kusari</option>
-                <option>Oni</option>
-                <option>Warden</option>
+                
+                        
+                    <option value=""></option>
+                    <option value="Angel">Angel</option>
+                    <option value="Fallen">Fallen</option>
+                    <option value="Guardian">Guardian</option>
+                    <option value="Human">Human</option>
+                    <option value="Istinal">Istinal</option>
+                    <option value="Kindred">Kindred</option>
+                    <option value="Kusari">Kusari</option>
+                    <option value="Oni">Oni</option>
+                    <option value="Warden">Warden</option>
+                        
+                
             </select>
+            <% } %>
+            <% } %>
     </fieldset>
     <fieldset class="form-group">
         <label for="gender" class="control-label col-md-2">Gender:</label>

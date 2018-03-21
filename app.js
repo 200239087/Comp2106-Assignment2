@@ -10,6 +10,7 @@ let config = require('./config/globals');
 
 let index = require('./controllers/index');
 let characters = require('./controllers/characters');
+let races = require('./controllers/races');
 
 let app = express();
 
@@ -29,6 +30,7 @@ mongoose.connect(config.db);
 
 app.use('/', index);
 app.use('/characters', characters);
+app.use('/races', races);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

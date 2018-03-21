@@ -2,7 +2,7 @@
 
 <h1><%= title %></h1>
 
-<form method="POST" id="add">
+<form method="post" id="add">
     <fieldset class="form-group">
         <label for="name" class="control-label col-md-2">Name:</label>
         <input class="col-md-2" type="text" id="name" name="name" required>
@@ -10,29 +10,31 @@
     <fieldset class="form-group">
         <label for="race" class="control-label col-md-2">Race:</label>
         <select class="col-md-2" id="race" name="race" required>
-            <option>Angel</option>
-            <option>Fallen</option>
-            <option>Guardian</option>
-            <option>Human</option>
-            <option>Istinal</option>
-            <option>Kindred</option>
-            <option>Kusari</option>
-            <option>Oni</option>
-            <option>Warden</option>
+                <option value=""></option>
+                <option value="Angel">Angel</option>
+                <option value="Fallen">Fallen</option>
+                <option value="Guardian">Guardian</option>
+                <option value="Human">Human</option>
+                <option value="Istinal">Istinal</option>
+                <option value="Kindred" selected>Kindred</option>
+                <option value="Kusari">Kusari</option>
+                <option value="Oni">Oni</option>
+                <option value="Warden">Warden</option>
         </select>
     </fieldset>
+    
     <fieldset class="form-group">
         <label for="gender" class="control-label col-md-2">Gender:</label>
         <fieldset class="form-check" style="display: inline;">
-            <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
             <label class="form-check-label" for="male">Male</label>
         </fieldset>
         <fieldset class="form-check" style="display: inline;">
-                <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required>
                 <label class="form-check-label" for="female">Female</label>
         </fieldset>
         <fieldset class="form-check" style="display: inline;">
-                <input class="form-check-input" type="radio" name="gender" id="other" value="Other">
+                <input class="form-check-input" type="radio" name="gender" id="other" value="Other" required>
                 <label class="form-check-label" for="other">Other</label>
         </fieldset>
     </fieldset>

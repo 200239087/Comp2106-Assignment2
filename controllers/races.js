@@ -1,40 +1,36 @@
 let express = require('express');
 let router = express.Router();
-let Character = require('../models/character');
+let Race = require('../models/race');
 
 router.get('/', (req, res, next) => {
-    Character.find((err, characters) => {
+    Race.find((err, race) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.render('characters/index', {
-               title: 'Character Profiles',
-               characters: characters 
+            res.render('races/index', {
+                title: 'List of Races',
+                race: race
             });
         }
     });
 });
 
 router.get('/add', (req, res, next) => {
-    res.render('characters/add', {
-       title: 'Add a New Character'
+    res.render('races/add', {
+        title: 'Add a New Race',
     });
 });
 
 router.post('/add', (req, res, next) => {
-    Character.create({
+    Race.create({
         name: req.body.name,
-        race: req.body.race,
-        gender: req.body.gender,
-        element: req.body.element,
-        summary: req.body.summary
-    }, (err, character) => {
+    }, (err, race) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.redirect('/characters');
+            res.redirect('/races');
         }
     });
 });
@@ -42,27 +38,27 @@ router.post('/add', (req, res, next) => {
 router.get('/delete/:_id', (req, res, next) => {
     let _id = req.params._id;
 
-    Character.remove({ _id: _id }, (err) => {
+    Race.remove({ _id: _id }, (err) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.redirect('/characters');
+            res.redirect('/races');
         }
-    });
+    })
 });
 
 router.get('/edit/:_id', (req, res, next) => {
     let _id = req.params._id;
 
-    Character.findById(_id, (err, character) => {
+    Race.findById(_id, (err, race) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.render('characters/edit', {
-                title: 'Character Details',
-                character: character
+            res.render('races/edit', {
+                title: 'Race Details',
+                race: race
             });
         }
     });
@@ -71,20 +67,16 @@ router.get('/edit/:_id', (req, res, next) => {
 router.post('/edit/:_id', (req, res, next) => {
     let _id = req.params._id;
 
-    Character.update({ _id: _id },
+    Race.update({ _id: _id },
     
     { $set: {
         name: req.body.name,
-        race: req.body.race,
-        gender: req.body.gender,
-        element: req.body.element,
-        summary: req.body.summary
     }}, null, (err) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.redirect('/characters')
+            res.redirect('/races')
         }
     });
 });
