@@ -10,11 +10,11 @@
     </fieldset>
     <fieldset class="form-group">
         <label for="race" class="control-label col-md-2">Race:</label>
-        <% for (let i = 0; i < race.length; i++) { %>
         <select class="col-md-2" id="race" name="race" required>
+                <% for (let i = 0; i < race.length; i++) { %>
                 <option value=""></option>
                 <option value="<%= race[i].name %>">race[i].name</option>
-
+                <% } %>
 
                 <!-- <option value="Angel">Angel</option>
                 <option value="Fallen">Fallen</option>
@@ -26,7 +26,6 @@
                 <option value="Oni">Oni</option>
                 <option value="Warden">Warden</option> -->
         </select>
-        <% } %>
     </fieldset>
     
     <fieldset class="form-group">

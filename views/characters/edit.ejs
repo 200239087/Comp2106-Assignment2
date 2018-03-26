@@ -15,11 +15,12 @@
     </fieldset>
     <fieldset class="form-group">
             <label for="race" class="control-label col-md-2">Race:</label>
+            <select class="col-md-2" id="race" name="race" required></select>
             <% for(let i = 0; i < race.length; i++) { %>
                 <% if(character.race == document.getElementById('race').options[i].value) { %>
                     <% document.getElementById('race').selectedIndex = i %>
                     
-            <select class="col-md-2" id="race" name="race" required>
+            
                     <option value=""></option>
                     <option value="<%= race[i].name %>"><%= race[i].name %></option>
                 
@@ -35,9 +36,10 @@
                     <option value="Warden">Warden</option> -->
                         
                 
-            </select>
+            
             <% } %>
             <% } %>
+        </select>
     </fieldset>
     <fieldset class="form-group">
         <label for="gender" class="control-label col-md-2">Gender:</label>
