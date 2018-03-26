@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
         else {
             res.render('characters/index', {
                title: 'Character Profiles',
-               characters: characters 
+               characters: characters
             });
         }
     });

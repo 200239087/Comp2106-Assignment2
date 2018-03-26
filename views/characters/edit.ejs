@@ -1,5 +1,4 @@
 <% include ../shared/header.ejs %>
-<% include ../../controllers/races.js %>
 
 <script>
     let option = document.getElementById('race').options;
@@ -21,10 +20,11 @@
                     <% document.getElementById('race').selectedIndex = i %>
                     
             <select class="col-md-2" id="race" name="race" required>
+                    <option value=""></option>
+                    <option value="<%= race[i].name %>"><%= race[i].name %></option>
                 
                         
-                    <option value=""></option>
-                    <option value="Angel">Angel</option>
+                    <!-- <option value="Angel">Angel</option>
                     <option value="Fallen">Fallen</option>
                     <option value="Guardian">Guardian</option>
                     <option value="Human">Human</option>
@@ -32,7 +32,7 @@
                     <option value="Kindred">Kindred</option>
                     <option value="Kusari">Kusari</option>
                     <option value="Oni">Oni</option>
-                    <option value="Warden">Warden</option>
+                    <option value="Warden">Warden</option> -->
                         
                 
             </select>

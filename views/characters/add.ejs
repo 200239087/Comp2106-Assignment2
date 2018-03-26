@@ -1,4 +1,5 @@
 <% include ../shared/header.ejs %>
+<% race extends characters %>
 
 <h1><%= title %></h1>
 
@@ -9,18 +10,23 @@
     </fieldset>
     <fieldset class="form-group">
         <label for="race" class="control-label col-md-2">Race:</label>
+        <% for (let i = 0; i < race.length; i++) { %>
         <select class="col-md-2" id="race" name="race" required>
                 <option value=""></option>
-                <option value="Angel">Angel</option>
+                <option value="<%= race[i].name %>">race[i].name</option>
+
+
+                <!-- <option value="Angel">Angel</option>
                 <option value="Fallen">Fallen</option>
                 <option value="Guardian">Guardian</option>
                 <option value="Human">Human</option>
                 <option value="Istinal">Istinal</option>
-                <option value="Kindred" selected>Kindred</option>
+                <option value="Kindred">Kindred</option>
                 <option value="Kusari">Kusari</option>
                 <option value="Oni">Oni</option>
-                <option value="Warden">Warden</option>
+                <option value="Warden">Warden</option> -->
         </select>
+        <% } %>
     </fieldset>
     
     <fieldset class="form-group">
