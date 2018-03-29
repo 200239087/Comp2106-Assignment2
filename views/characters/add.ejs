@@ -14,23 +14,13 @@
                 <% for (let i = 0; i < race.length; i++) { %>
                 <option value="<%= race[i].name %>"><%= race[i].name %></option>
                 <% } %>
-                <!-- <option value="Angel">Angel</option>
-                <option value="Fallen">Fallen</option>
-                <option value="Guardian">Guardian</option>
-                <option value="Human">Human</option>
-                <option value="Istinal">Istinal</option>
-                <option value="Kindred">Kindred</option>
-                <option value="Kusari">Kusari</option>
-                <option value="Oni">Oni</option>
-                <option value="Warden">Warden</option> -->
         </select>
     </fieldset>
     
     <fieldset class="form-group">
         <label for="gender" class="control-label col-md-2">Gender:</label>
         <fieldset class="form-check" style="display: inline;">
-            <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required <% if (race.name === "Kindred") { disabled } %>
-            >
+            <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required <% if(race.name == 'Kindred') { %> disabled <% } %>>
             <label class="form-check-label" for="male">Male</label>
         </fieldset>
         <fieldset class="form-check" style="display: inline;">
@@ -41,8 +31,8 @@
                 <input class="form-check-input" type="radio" name="gender" id="other" value="Other" required <% if (race.name == "Kindred") {disabled} %>>
                 <label class="form-check-label" for="other">Other</label>
         </fieldset>
-        <% if (race.value === "Kindred") { %>
-            <p>Only Females Can Be Kindred.</p>
+        <% if (character.race === "Kindred") { %>
+            <p>Note: Only Females Can Be Kindred.</p>
         <% } %>
     </fieldset>
     <!-- <fieldset class="form-group">

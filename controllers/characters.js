@@ -23,9 +23,18 @@ router.get('/add', (req, res, next) => {
             console.log(err);
         }
         else {
-            res.render('characters/add', {
-                title: 'Add a New Character',
-                race: race
+            Character.find((err, character) => {
+                if(err) {
+                    console.log(err);
+                }
+                else {
+                    res.render('characters/add', {
+                        title: 'Add a New Character',
+                        race: race,
+                        character: character
+                    });
+                }
+                
             });
         }
     })

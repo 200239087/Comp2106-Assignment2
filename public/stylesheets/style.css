@@ -40,8 +40,8 @@ div.grid {
     /* grid-template-columns: 1/5 1/5 1/5 1/5 1/5; */
     grid-template-rows: auto;
     grid-template-areas: 
-    "name race summary summary action"
-    "gender element summary summary action"
+    "name race summary summary summary summary summary action"
+    "gender element summary summary summary summary summary action"
 }
 
 section.item-a {
