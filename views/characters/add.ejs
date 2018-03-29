@@ -31,7 +31,7 @@
                 <input class="form-check-input" type="radio" name="gender" id="other" value="Other" required <% if (race.name == "Kindred") {disabled} %>>
                 <label class="form-check-label" for="other">Other</label>
         </fieldset>
-        <% if (character.race === "Kindred") { %>
+        <% if (race.name === "Kindred") { %>
             <p>Note: Only Females Can Be Kindred.</p>
         <% } %>
     </fieldset>
