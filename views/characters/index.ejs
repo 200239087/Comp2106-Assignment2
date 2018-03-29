@@ -27,12 +27,12 @@
         <h2>Summary</h2>
         <p style="min-width: 85%;"><%= characters[i].summary %></p>
     </section>
-    <% if(user) { %>
     <section class="item item-f">
+        <% if(user) { %>
         <a href="/characters/edit/<%= characters[i]._id %>">Edit</a>
         <a href="/characters/delete/<%= characters[i]._id %>" onclick="return confirm('Are you sure you want to delete this character?')">Delete</a>
+        <% } %>
     </section>
-    <% } %>
 </div>
 <% } %>
 
