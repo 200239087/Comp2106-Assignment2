@@ -37,7 +37,6 @@ main section:last-child a:hover {
 div.grid {
     margin: 2%;
     display: grid;
-    /* grid-template-columns: 1/5 1/5 1/5 1/5 1/5; */
     grid-template-rows: auto;
     grid-template-areas: 
     "name race summary summary summary summary summary action"

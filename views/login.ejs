@@ -1,0 +1,26 @@
+<% include shared/header.ejs %>
+
+    <h1>Login</h1>
+
+    <% if(messages.length > 0) { %>
+        <div class="alert alert-danger"><%= messages %></div>
+    <% } else { %>
+        <div class="alert alert-info">Please login to alter data.</div>
+    <% } %>
+    <form method="post">
+        <fieldset class="form-group">
+            <label for="username" class="col-sm-2 control-label">Username: </label>
+            <input name="username" id="username" type="email" required />
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="password" class="col-sm-2 control-label">Password: </label>
+            <input name="password" id="password" type="password" required />
+        </fieldset>
+
+        <button class="btn btn-primary offset-2">Login</button>
+        <a href="/google"><img src="/images/google.png" alt="Google Login Button"></a>
+        <hr />
+        Need access?  <a href="/register" title="Register">Register</a>
+    </form>
+
+<% include shared/footer.ejs %>

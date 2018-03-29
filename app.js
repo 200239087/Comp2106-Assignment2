@@ -5,6 +5,11 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
+let passport = require('passport');
+let session = require('express-session');
+let localStrategy = require('passport-local').Strategy;
+let googleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
 let mongoose = require('mongoose');
 let config = require('./config/globals');
 
@@ -28,9 +33,39 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect(config.db);
 
+app.use(session({
+  secret: 'any string for salting here',
+  resave: true,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', index);
 app.use('/characters', characters);
 app.use('/races', races);
+
+let User = require('./models/user');
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+passport.use(new googleStrategy( {
+  clientID: config.google.googleClientId,
+  clientSecret: config.google.googleClientSecret,
+  callbackURL: config.google.googleCallbackUrl,
+  profileFields: ['id', 'emails']
+},
+  (accessToken, refreashToken, profile, callback) => {
+    User.findOrCreate({
+      googleId: profile.id,
+      username: profile.emails[0].value
+    }, (err, user) => {
+      return callback(err, user);
+    });
+  }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

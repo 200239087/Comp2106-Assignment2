@@ -3,6 +3,8 @@ let router = express.Router();
 let Character = require('../models/character');
 let Race = require('../models/race');
 
+let functions = require('../config/functions');
+
 router.get('/', (req, res, next) => {
     Character.find((err, characters) => {
         if (err) {
@@ -11,36 +13,28 @@ router.get('/', (req, res, next) => {
         else {
             res.render('characters/index', {
                title: 'Character Profiles',
-               characters: characters
+               characters: characters,
+               user: req.user
             });
         }
     });
 });
 
-router.get('/add', (req, res, next) => {
+router.get('/add', functions.isLoggedIn, (req, res, next) => {
     Race.find((err, race) => {
         if (err) {
             console.log(err);
         }
         else {
-            Character.find((err, character) => {
-                if(err) {
-                    console.log(err);
-                }
-                else {
-                    res.render('characters/add', {
-                        title: 'Add a New Character',
-                        race: race,
-                        character: character
-                    });
-                }
-                
+                res.render('characters/add', {
+                title: 'Add a New Character',
+                race: race,
+                user: req.user
             });
-        }
-    })
+        }});
 });
 
-router.post('/add', (req, res, next) => {
+router.post('/add', functions.isLoggedIn, (req, res, next) => {
     Character.create({
         name: req.body.name,
         race: req.body.race,
@@ -57,7 +51,7 @@ router.post('/add', (req, res, next) => {
     });
 });
 
-router.get('/delete/:_id', (req, res, next) => {
+router.get('/delete/:_id', functions.isLoggedIn, (req, res, next) => {
     let _id = req.params._id;
 
     Character.remove({ _id: _id }, (err) => {
@@ -70,7 +64,7 @@ router.get('/delete/:_id', (req, res, next) => {
     });
 });
 
-router.get('/edit/:_id', (req, res, next) => {
+router.get('/edit/:_id', functions.isLoggedIn, (req, res, next) => {
     let _id = req.params._id;
 
     Character.findById(_id, (err, character) => {
@@ -86,7 +80,8 @@ router.get('/edit/:_id', (req, res, next) => {
                     res.render('characters/edit', {
                         title: 'Character Details',
                         character: character,
-                        race: race
+                        race: race,
+                        user: req.user
                     });
                 }
             })
@@ -95,7 +90,7 @@ router.get('/edit/:_id', (req, res, next) => {
     });
 });
 
-router.post('/edit/:_id', (req, res, next) => {
+router.post('/edit/:_id', functions.isLoggedIn, (req, res, next) => {
     let _id = req.params._id;
 
     Character.update({ _id: _id },
