@@ -1,11 +1,5 @@
 <% include ../shared/header.ejs %>
 
-<script>
-    let option = document.getElementById('race').options;
-    let select = document.getElementById('race');
-</script>
-
-
 <h1><%= title %></h1>
 
 <form method="POST" id="edit">
@@ -15,12 +9,11 @@
     </fieldset>
     <fieldset class="form-group">
             <label for="race" class="control-label col-md-2">Race:</label>
-            <select class="col-md-2" id="race" name="race" required></select>
-            <option value=""></option>
-            <% for(let i = 0; i < race.length; i++) { %>
-                <% if(character.race == document.getElementById('race').options[i].value) { %>
-                    <% document.getElementById('race').selectedIndex = i %>
-                    <option value="<%= race[i].name %>"><%= race[i].name %></option>
+            <select class="col-md-2" id="race" name="race" required>
+                    <option value="">Select a Race...</option>
+                    <% for (let i = 0; i < race.length; i++) { %>
+                    <option value="<%= race[i].name %>" <% if(race[i].name == character.race) {selected} %>><%= race[i].name %></option>
+                    <% } %>
                     <!-- <option value="Angel">Angel</option>
                     <option value="Fallen">Fallen</option>
                     <option value="Guardian">Guardian</option>
@@ -30,8 +23,8 @@
                     <option value="Kusari">Kusari</option>
                     <option value="Oni">Oni</option>
                     <option value="Warden">Warden</option> -->
-            <% } %>
-            <% } %>
+            
+            
         </select>
     </fieldset>
     <fieldset class="form-group">

@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let Character = require('../models/character');
+let Race = require('../models/race');
 
 router.get('/', (req, res, next) => {
     Character.find((err, characters) => {
@@ -17,9 +18,17 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/add', (req, res, next) => {
-    res.render('characters/add', {
-       title: 'Add a New Character'
-    });
+    Race.find((err, race) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.render('characters/add', {
+                title: 'Add a New Character',
+                race: race
+            });
+        }
+    })
 });
 
 router.post('/add', (req, res, next) => {
@@ -60,10 +69,19 @@ router.get('/edit/:_id', (req, res, next) => {
             console.log(err);
         }
         else {
-            res.render('characters/edit', {
-                title: 'Character Details',
-                character: character
-            });
+            Race.find((err, race) => {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    res.render('characters/edit', {
+                        title: 'Character Details',
+                        character: character,
+                        race: race
+                    });
+                }
+            })
+            
         }
     });
 });
