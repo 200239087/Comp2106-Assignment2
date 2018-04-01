@@ -24,11 +24,11 @@
             <label class="form-check-label" for="male">Male</label>
         </fieldset>
         <fieldset class="form-check" style="display: inline;">
-                <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required <% if (race.name == "Kindred") {checked} %>>
+                <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required <% if(race.name == 'Kindred') { %> checked <% } %>>
                 <label class="form-check-label" for="female">Female</label>
         </fieldset>
         <fieldset class="form-check" style="display: inline;">
-                <input class="form-check-input" type="radio" name="gender" id="other" value="Other" required <% if (race.name == "Kindred") {disabled} %>>
+                <input class="form-check-input" type="radio" name="gender" id="other" value="Other" required <% if(race.name == 'Kindred') { %> disabled <% } %>>
                 <label class="form-check-label" for="other">Other</label>
         </fieldset>
         <% if (race.name === "Kindred") { %>

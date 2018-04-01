@@ -98,7 +98,7 @@ body {
     textarea {
         width: 95vw;
     }
-    input#name, input#element {
+    input#name, input#element, input#username, input#password, input#confirm {
         width: 95vw;
     }
     button {
