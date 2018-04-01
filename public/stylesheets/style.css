@@ -38,7 +38,6 @@ body {
     }
     main section:last-child a {
         color: black;
-        align-self: center;
         padding: 5px;
     }
     main section:last-child a:hover {
@@ -50,33 +49,34 @@ body {
         display: grid;
         grid-template-rows: auto;
         grid-template-areas: 
-        "name summary summary summary"
-        "race summary summary summary"
-        "gender summary summary summary"
-        "element action action action"
+        "nameSection summarySection summarySection summarySection"
+        "raceSection summarySection summarySection summarySection"
+        "genderSection summarySection summarySection summarySection"
+        "elementSection actionSection actionSection actionSection"
     }
     
-    section.item {
+    .item {
         color: black;
     }
     
-    section.item-a {
-        grid-area: name;
+    .section-a {
+        grid-area: nameSection;
     }
-    section.item-b {
-        grid-area: race;
+    .section-b {
+        grid-area: raceSection;
     }
-    section.item-c {
-        grid-area: gender;
+    .section-c {
+        grid-area: genderSection;
     }
-    section.item-d {
-        grid-area: element;
+    .section-d {
+        grid-area: elementSection;
     }
-    section.item-e {
-        grid-area: summary;
+    .section-e {
+        grid-area: summarySection;
     }
-    section.item-f {
+    .section-f {
         grid-area: action;
+        align-self: center;
     }
     
     form#edit > fieldset > select#race {
