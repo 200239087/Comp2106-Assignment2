@@ -38,7 +38,7 @@ body {
     }
     main section:last-child a {
         color: black;
-        padding: 5px;
+        /* padding: 5px; */
     }
     main section:last-child a:hover {
         color: grey;
@@ -52,7 +52,7 @@ body {
         "nameSection summarySection summarySection summarySection"
         "raceSection summarySection summarySection summarySection"
         "genderSection summarySection summarySection summarySection"
-        "elementSection actionSection actionSection actionSection"
+        "elementSection action action action"
     }
     
     .item {
@@ -74,9 +74,9 @@ body {
     .section-e {
         grid-area: summarySection;
     }
-    .section-f {
+    .item-f {
         grid-area: action;
-        align-self: center;
+        text-align: center;
     }
     
     form#edit > fieldset > select#race {
@@ -94,6 +94,15 @@ body {
     footer p small {
         text-align: center;
         margin-left: 15px;
+    }
+    textarea {
+        width: 95vw;
+    }
+    input#name, input#element {
+        width: 95vw;
+    }
+    button {
+        width: 95vw;
     }
 }
 
