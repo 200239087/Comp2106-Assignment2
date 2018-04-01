@@ -1,4 +1,6 @@
 body {
+    margin: 0;
+    padding: 0;
     background: grey;
     background-image: url('/images/wallpaper-space.jpg');
     color: white;
@@ -88,7 +90,6 @@ body {
         width: 38px;
         height: 38px;
         transform: translateY(14px);
-        /* color: white; */
     }
     footer p small {
         text-align: center;
@@ -121,11 +122,9 @@ body {
     main section:last-child {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
     }
     main section:last-child a {
         color: black;
-        align-self: center;
         padding: 5px;
     }
     main section:last-child a:hover {
@@ -137,31 +136,98 @@ body {
         display: grid;
         grid-template-rows: auto;
         grid-template-areas: 
-        "name race summary summary summary summary summary action"
-        "gender element summary summary summary summary summary action"
+        "nameSection raceSection summarySection summarySection summarySection action"
+        "nameSection raceSection summarySection summarySection summarySection action"
+        "nameSection raceSection summarySection summarySection summarySection action"
+        "genderSection elementSection summarySection summarySection summarySection action"
+        "genderSection elementSection summarySection summarySection summarySection action"
+        "genderSection elementSection summarySection summarySection summarySection action"
     }
     
-    section.item {
+    .item {
         color: black;
     }
-    
-    section.item-a {
+    .section-a {
+        grid-area: nameSection;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "nameHeader"
+        "name"
+        "name"
+    }
+    .item-a1 {
+        grid-area: nameHeader;
+    }
+    .item-a2 {
         grid-area: name;
     }
-    section.item-b {
+    .section-b {
+        grid-area: raceSection;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "raceHeader"
+        "race"
+        "race"
+    }
+    .item-b1 {
+        grid-area: raceHeader;
+    }
+    .item-b2 {
         grid-area: race;
     }
-    section.item-c {
+    .section-c {
+        grid-area: genderSection;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "genderHeader"
+        "gender"
+        "gender"
+    }
+    .item-c1 {
+        grid-area: genderHeader;
+    }
+    .item-c2 {
         grid-area: gender;
     }
-    section.item-d {
+    .section-d {
+        grid-area: elementSection;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "elementHeader"
+        "element"
+        "element"
+    }
+    .item-d1 {
+        grid-area: elementHeader;
+    }
+    .item-d2 {
         grid-area: element;
     }
-    section.item-e {
+    .section-e {
+        grid-area: summarySection;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "summaryHeader summaryHeader summaryHeader"
+        "summary summary summary"
+        "summary summary summary"
+        "summary summary summary"
+        "summary summary summary"
+        "summary summary summary"
+    }
+    .item-e1 {
+        grid-area: summaryHeader;
+    }
+    .item-e2 {
         grid-area: summary;
     }
     section.item-f {
         grid-area: action;
+        justify-content: space-evenly;
     }
     
     form#edit > fieldset > select#race {

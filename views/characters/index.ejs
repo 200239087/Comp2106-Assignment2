@@ -7,32 +7,32 @@
 
 <% for(let i = 0; i < characters.length; i++){ %>
 <div class="grid">
-    <section class="item item-a">
-        <h2>Name</h2>
-        <p><%= characters[i].name %></p>
+    <section class="section-a">
+        <h2 class="item item-a1">Name</h2>
+        <p class="item item-a2"><%= characters[i].name %></p>
     </section>
-    <section class="item item-b">
-        <h2>Race</h2>
-        <p><%= characters[i].race %></p>
+    <section class="section-b">
+        <h2 class="item item-b1">Race</h2>
+        <p class="item item-b2"><%= characters[i].race %></p>
     </section>
-    <section class="item item-c">
-        <h2>Gender</h2>
-        <p><%= characters[i].gender %></p>
+    <section class="section-c">
+        <h2 class="item item-c1">Gender</h2>
+        <p class="item item-c2"><%= characters[i].gender %></p>
     </section>
-    <section class="item item-d">
-        <h2>Magic Element</h2>
-        <p><%= characters[i].element %></p>
+    <section class="section-d">
+        <h2 class="item item-d1">Magic Element</h2>
+        <p class="item item-d2"><%= characters[i].element %></p>
     </section>
-    <section class="item item-e">
-        <h2>Summary</h2>
-        <p style="min-width: 85%;"><%= characters[i].summary %></p>
+    <section class="section-e">
+        <h2 class="item item-e1">Summary</h2>
+        <p class="item item-e2"><%= characters[i].summary %></p>
     </section>
-    <section class="item item-f">
-        <% if(user) { %>
+    <% if(user) { %>
+    <section class="section-f item item-f">
         <a href="/characters/edit/<%= characters[i]._id %>">Edit</a>
         <a href="/characters/delete/<%= characters[i]._id %>" onclick="return confirm('Are you sure you want to delete this character?')">Delete</a>
-        <% } %>
     </section>
+    <% } %>
 </div>
 <% } %>
 
