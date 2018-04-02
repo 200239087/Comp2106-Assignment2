@@ -5,4 +5,6 @@
 <p>I am currently writing an indepth fantasy book series with hundreds of characters, so many that I've started losing track of them.</p> 
 <p>Hopfully with this application I can create a well structured and easy to read character profile database for my convenience</p>
 
-<p>This application uses both Bootstrap and my own custom CSS. I have almost implemented CSS Grid in the application</p>
+<p>This application uses both Bootstrap and my own custom CSS. I have also implemented CSS Grid in the application</p>
+
+<p>I also made an interesting function, try creating a character who's race is a Kindred.</p>
