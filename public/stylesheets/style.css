@@ -240,6 +240,7 @@ body {
     section.item-f {
         grid-area: action;
         justify-content: space-evenly;
+        text-align: center;
     }
     
     form#edit > fieldset > select#race {
